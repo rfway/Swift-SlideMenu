@@ -17,6 +17,7 @@
 		CDE72DA31A1EFEC800EAC667 /* RootSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE72DA21A1EFEC800EAC667 /* RootSideMenuViewController.swift */; };
 		CDE72DA51A1EFEF800EAC667 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE72DA41A1EFEF800EAC667 /* MenuTableViewController.swift */; };
 		CDE72DA71A1EFF1A00EAC667 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE72DA61A1EFF1A00EAC667 /* MainViewController.swift */; };
+		D3E3DE631C76ACD100E9BE40 /* DetailSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3DE621C76ACD100E9BE40 /* DetailSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		CDE72DA21A1EFEC800EAC667 /* RootSideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSideMenuViewController.swift; sourceTree = "<group>"; };
 		CDE72DA41A1EFEF800EAC667 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		CDE72DA61A1EFF1A00EAC667 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D3E3DE621C76ACD100E9BE40 /* DetailSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				CDE72DA61A1EFF1A00EAC667 /* MainViewController.swift */,
 				CD8E694A1A1E650500D2ABF3 /* ContentViewController.swift */,
 				CDAF037A1A204C430024C41C /* MenuSegue.swift */,
+				D3E3DE621C76ACD100E9BE40 /* DetailSegue.swift */,
 			);
 			path = SwiftSideMenu;
 			sourceTree = "<group>";
@@ -168,6 +171,8 @@
 		CD369E9E1A1857D800B1FE38 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Hai Luong Quang";
 				TargetAttributes = {
@@ -228,6 +233,7 @@
 				CDE72DA71A1EFF1A00EAC667 /* MainViewController.swift in Sources */,
 				CD8E694B1A1E650500D2ABF3 /* ContentViewController.swift in Sources */,
 				CDE72DA51A1EFEF800EAC667 /* MenuTableViewController.swift in Sources */,
+				D3E3DE631C76ACD100E9BE40 /* DetailSegue.swift in Sources */,
 				CDE72DA31A1EFEC800EAC667 /* RootSideMenuViewController.swift in Sources */,
 				CD369EAC1A1857D800B1FE38 /* AppDelegate.swift in Sources */,
 			);

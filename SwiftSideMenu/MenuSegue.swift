@@ -14,6 +14,6 @@ class MenuSegue: UIStoryboardSegue {
         let menuController: MenuTableViewController = self.sourceViewController as! MenuTableViewController
         let rootController: RootSideMenuViewController = menuController.parentViewController as! RootSideMenuViewController
         
-        rootController.changeContentController(self.destinationViewController as! UIViewController)
+        rootController.changeContentController(self.destinationViewController )
     }
 }

@@ -82,7 +82,7 @@ class MainViewController: UIViewController {
         
         CGContextStrokePath(context)
         
-        var image = UIGraphicsGetImageFromCurrentImageContext() // Return UIImage
+        let image = UIGraphicsGetImageFromCurrentImageContext() // Return UIImage
         UIGraphicsEndImageContext()
         
         return image
@@ -101,8 +101,8 @@ class MainViewController: UIViewController {
             self.headerBar.removeFromSuperview()
             
             // Resetup content frame
-            var frame = self.contentView.frame
-            var newFrame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
+            let frame = self.contentView.frame
+            let newFrame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
             
             self.contentView.frame = newFrame
         }

@@ -25,8 +25,8 @@ class ContentViewController: UIViewController {
         self.title = "Google Web View"
 
         // Do any additional setup after loading the view.
-        var url: NSURL = NSURL(string: "https://www.google.com.vn")!
-        var urlRequest: NSURLRequest = NSURLRequest(URL: url)
+        let url: NSURL = NSURL(string: "https://www.google.com.vn")!
+        let urlRequest: NSURLRequest = NSURLRequest(URL: url)
         self.webView.loadRequest(urlRequest)
     }
 

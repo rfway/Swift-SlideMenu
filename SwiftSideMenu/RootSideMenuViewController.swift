@@ -45,19 +45,19 @@ class RootSideMenuViewController: UIViewController, UIGestureRecognizerDelegate 
         
         self.menuTableViewController = storyBoard.instantiateViewControllerWithIdentifier("SBMenuTableViewControlleIdentifier") as? MenuTableViewController
         
-        self.mainViewController = storyBoard.instantiateViewControllerWithIdentifier("SBMainViewControllerIdentifier") as! MainViewController!
+        self.mainViewController = storyBoard.instantiateViewControllerWithIdentifier("SBMainViewControllerIdentifier") as? MainViewController
 
         self._displayChildController(self.menuTableViewController!)    // Adding menu table as lowest layer
         self._displayChildController(self.mainViewController!)        // Adding main view as the upper layer
 
         // Setup gesture recognizer for showing side menu
-        var panMenuGesture: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handleLeftPanMenuGesture:")
+        let panMenuGesture: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handleLeftPanMenuGesture:")
         panMenuGesture.delegate = self
         self.mainViewController?.view.addGestureRecognizer(panMenuGesture)
 
 
         // Setup the first content controller
-        var firstContentController = storyBoard.instantiateViewControllerWithIdentifier("SBFirstContentIdentifier") as! UIViewController
+        let firstContentController = storyBoard.instantiateViewControllerWithIdentifier("SBFirstContentIdentifier") 
         self.changeContentController(firstContentController)
         
     }
@@ -76,10 +76,10 @@ class RootSideMenuViewController: UIViewController, UIGestureRecognizerDelegate 
         self.addChildViewController(child)
         
         // Setup new frame with space for status bar
-        var statusBar = (UIApplication.sharedApplication().statusBarHidden) ? 0.0 : kStausBarHeight
+        let statusBar = (UIApplication.sharedApplication().statusBarHidden) ? 0.0 : kStausBarHeight
         
-        var size = self.view.frame.size
-        var childFrame = CGRect(x: 0.0, y: statusBar, width: size.width, height: size.height)
+        let size = self.view.frame.size
+        let childFrame = CGRect(x: 0.0, y: statusBar, width: size.width, height: size.height)
         child.view.frame = childFrame
         
         self.view.addSubview(child.view)
@@ -89,7 +89,7 @@ class RootSideMenuViewController: UIViewController, UIGestureRecognizerDelegate 
     // MARK: - Controll side menu display actions
     func handleLeftPanMenuGesture(recoginzer: UIPanGestureRecognizer) {
         
-        var mainView = self.mainViewController!.view
+        let mainView = self.mainViewController!.view
         var menuView = self.menuTableViewController!.view
 
         // Get starting point
@@ -118,7 +118,7 @@ class RootSideMenuViewController: UIViewController, UIGestureRecognizerDelegate 
         // Determine to open or close menu in the end state
         // by the threshold location
         if recoginzer.state == UIGestureRecognizerState.Cancelled || recoginzer.state == UIGestureRecognizerState.Ended {
-            var endPoint = self.mainViewController!.view.frame.origin
+            let endPoint = self.mainViewController!.view.frame.origin
             if (endPoint.x >= self.kTouchNavThreshold) {
                 
                 // Open the menu
@@ -134,15 +134,15 @@ class RootSideMenuViewController: UIViewController, UIGestureRecognizerDelegate 
     
     func openLeftMenu() {
         
-        var mainView = self.mainViewController!.view
+        let mainView = self.mainViewController!.view
         var menuView = self.menuTableViewController!.view
         
         // Animate opening menu
         UIView.animateWithDuration(kAnimateMenuDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
 
-            var oldFrame = mainView.frame
+            let oldFrame = mainView.frame
             
-            var newFrame = CGRect(x: self.kNavMenuSpace, y: oldFrame.origin.y, width: oldFrame.size.width, height: oldFrame.size.height)
+            let newFrame = CGRect(x: self.kNavMenuSpace, y: oldFrame.origin.y, width: oldFrame.size.width, height: oldFrame.size.height)
             
             // Apply new frame on main view to show menu view
             mainView.frame = newFrame;
@@ -161,14 +161,14 @@ class RootSideMenuViewController: UIViewController, UIGestureRecognizerDelegate 
     
     func closeLeftMenu() {
         
-        var mainView = self.mainViewController!.view
+        let mainView = self.mainViewController!.view
         var menuView = self.menuTableViewController!.view
         
         // Animate close menu
         UIView.animateWithDuration(kAnimateMenuDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
             
-            var oldFrame = mainView.frame
-            var newFrame = CGRect(x: 0.0, y: oldFrame.origin.y, width: oldFrame.size.width, height: oldFrame.size.height)
+            let oldFrame = mainView.frame
+            let newFrame = CGRect(x: 0.0, y: oldFrame.origin.y, width: oldFrame.size.width, height: oldFrame.size.height)
             
             // Apply new frame on main view to show menu view
             mainView.frame = newFrame;
@@ -201,7 +201,7 @@ class RootSideMenuViewController: UIViewController, UIGestureRecognizerDelegate 
             self.closeLeftMenu()
         }
         
-        var mainViewController = self.mainViewController!
+        let mainViewController = self.mainViewController!
         var currentContentController = mainViewController.currentContentController
         
         // Remove current view controller
